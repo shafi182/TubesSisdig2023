@@ -5,15 +5,15 @@ use IEEE.std_logic_unsigned.all;
 
 ENTITY fsm_kpk IS
 PORT( 
-		rst, clk										: in std_logic;
-		load_a,load_b,load_c,load_d						: in std_logic; 	-- penentu untuk load nilai awal
-		Enable_a, Enable_b, Enable_c, Enable_d 			: out std_logic;	-- register nilai input awal
+		rst, clk					: in std_logic;
+		load_a,load_b,load_c,load_d			: in std_logic; 	-- penentu untuk load nilai awal
+		Enable_a, Enable_b, Enable_c, Enable_d 		: out std_logic;	-- register nilai input awal
 		Enable_aop, Enable_bop, Enable_cop, Enable_dop 	: out std_logic;	-- register nilai operasi
-		P, I											: in std_logic;		-- a = b
-		Q, J											: in std_logic;		-- a > b
-		R, K											: out std_logic;	-- mux adder
-		Y												: out std_logic;	-- mux setelah 1 tahap
-		Z												: out std_logic		-- meneruskan nilai output kpk
+		P, I						: in std_logic;		-- a = b
+		Q, J						: in std_logic;		-- a > b
+		R, K						: out std_logic;	-- mux adder
+		Y						: out std_logic;	-- mux setelah 1 tahap
+		Z						: out std_logic		-- meneruskan nilai output kpk
 );
 end fsm_kpk;
 
