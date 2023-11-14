@@ -36,7 +36,7 @@ BEGIN
 	BEGIN
 				WAIT UNTIL(clk'EVENT ) AND ( clk = '1');
 				IF ( rst = '0' ) THEN
-					currentstate <= s1;
+					currentstate <= s0;
 				ELSE
 					currentstate <= nextstate;
 				END IF;
