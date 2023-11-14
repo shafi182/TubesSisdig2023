@@ -2,15 +2,15 @@ LIBRARY ieee ;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 
-ENTITY Subtractor32Bit IS
+ENTITY Subtractor8Bit IS
 		PORT( 
 				A, B : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
 				D : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
 				Bout : OUT STD_LOGIC
 		);
-END Subtractor32Bit;
+END Subtractor8Bit;
 
-ARCHITECTURE behavioral OF Subtractor32Bit IS
+ARCHITECTURE behavioral OF Subtractor8Bit IS
 		SIGNAL Bsig : STD_LOGIC_VECTOR(7 DOWNTO 0);
 		COMPONENT halfSubtractor IS
 		PORT( A,B : IN STD_LOGIC;
