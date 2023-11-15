@@ -75,6 +75,6 @@ BEGIN
 	B_FPB  : fpb port map(rst, clk, output0_demux1, output0_demux2, output0_demux3, output_mux1, output_fpb);
 	
 	--KPK
-	B_KPK  : datapath_kpk port map(rst, clk, output1_demux1, output1_demux2, output1_demux3, output_mux1, output_kpk);
+	B_KPK  : datapath_kpk port map(rst, clk, output1_demux1, output1_demux2, output1_demux3, output_mux2, output_kpk);
 	
 END behavioral;
