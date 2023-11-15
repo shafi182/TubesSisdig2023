@@ -116,8 +116,8 @@ BEGIN
 				Enable_c <= '0';
 				Enable_d <= '1';
 			ELSIF (W = '1') THEN
-				Enable_a <= '0';
-				Enable_b <= '0';
+				Enable_c <= '0';
+				Enable_d <= '0';
 			END IF;
 			
 			--PERPINDAHAN STATE
