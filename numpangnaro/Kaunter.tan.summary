@@ -1,0 +1,36 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 8.347 ns
+From           : output[16]~reg0
+To             : output[16]
+From Clock     : clockasli
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clockasli'
+Slack          : N/A
+Required Time  : None
+Actual Time    : 175.16 MHz ( period = 5.709 ns )
+From           : output[0]~reg0
+To             : output[29]~reg0
+From Clock     : clockasli
+To Clock       : clockasli
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

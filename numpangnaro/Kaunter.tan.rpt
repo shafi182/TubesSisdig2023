@@ -1,0 +1,434 @@
+Classic Timing Analyzer report for Kaunter
+Tue Nov 21 15:42:24 2023
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'clockasli'
+  7. tco
+  8. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                             ;
++------------------------------+-------+---------------+----------------------------------+-----------------+-----------------+------------+-----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From            ; To              ; From Clock ; To Clock  ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------+-----------------+------------+-----------+--------------+
+; Worst-case tco               ; N/A   ; None          ; 8.347 ns                         ; output[16]~reg0 ; output[16]      ; clockasli  ; --        ; 0            ;
+; Clock Setup: 'clockasli'     ; N/A   ; None          ; 175.16 MHz ( period = 5.709 ns ) ; output[0]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                 ;                 ;            ;           ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------+-----------------+------------+-----------+--------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                                                            ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                                                               ; Setting            ; From ; To ; Entity Name ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                                                          ; EP2C20F484C7       ;      ;    ;             ;
+; Timing Models                                                                                        ; Final              ;      ;    ;             ;
+; Default hold multicycle                                                                              ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                                                            ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                                                               ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                                                       ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                                                     ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                                                                ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                                                              ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                                                     ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                                                 ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                                                        ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                                                    ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                                                    ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node                                                ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                                                                ; 10                 ;      ;    ;             ;
+; Number of paths to report                                                                            ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                                                         ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                                                               ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                                                           ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                                                         ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis                                       ; Off                ;      ;    ;             ;
+; Reports worst-case timing paths for each clock domain and analysis                                   ; On                 ;      ;    ;             ;
+; Specifies the maximum number of worst-case timing paths to report for each clock domain and analysis ; 100                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation                                  ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                                                           ; Near End           ;      ;    ;             ;
++------------------------------------------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clockasli       ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clockasli'                                                                                                                                                                                                                       ;
++-----------------------------------------+-----------------------------------------------------+-----------------+-----------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From            ; To              ; From Clock ; To Clock  ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+-----------------+-----------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 175.16 MHz ( period = 5.709 ns )                    ; output[0]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.470 ns                ;
+; N/A                                     ; 175.96 MHz ( period = 5.683 ns )                    ; output[0]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.444 ns                ;
+; N/A                                     ; 180.31 MHz ( period = 5.546 ns )                    ; output[2]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.307 ns                ;
+; N/A                                     ; 181.16 MHz ( period = 5.520 ns )                    ; output[2]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.281 ns                ;
+; N/A                                     ; 181.29 MHz ( period = 5.516 ns )                    ; output[0]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.277 ns                ;
+; N/A                                     ; 182.58 MHz ( period = 5.477 ns )                    ; output[6]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.238 ns                ;
+; N/A                                     ; 183.45 MHz ( period = 5.451 ns )                    ; output[6]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.212 ns                ;
+; N/A                                     ; 183.52 MHz ( period = 5.449 ns )                    ; output[3]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.210 ns                ;
+; N/A                                     ; 183.76 MHz ( period = 5.442 ns )                    ; output[10]~reg0 ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.201 ns                ;
+; N/A                                     ; 184.40 MHz ( period = 5.423 ns )                    ; output[3]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.184 ns                ;
+; N/A                                     ; 184.64 MHz ( period = 5.416 ns )                    ; output[10]~reg0 ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.175 ns                ;
+; N/A                                     ; 185.94 MHz ( period = 5.378 ns )                    ; output[1]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.139 ns                ;
+; N/A                                     ; 186.19 MHz ( period = 5.371 ns )                    ; output[4]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.132 ns                ;
+; N/A                                     ; 186.81 MHz ( period = 5.353 ns )                    ; output[2]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.114 ns                ;
+; N/A                                     ; 186.85 MHz ( period = 5.352 ns )                    ; output[1]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.113 ns                ;
+; N/A                                     ; 187.09 MHz ( period = 5.345 ns )                    ; output[4]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.106 ns                ;
+; N/A                                     ; 187.20 MHz ( period = 5.342 ns )                    ; output[5]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.103 ns                ;
+; N/A                                     ; 188.11 MHz ( period = 5.316 ns )                    ; output[5]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.077 ns                ;
+; N/A                                     ; 189.25 MHz ( period = 5.284 ns )                    ; output[6]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.045 ns                ;
+; N/A                                     ; 190.19 MHz ( period = 5.258 ns )                    ; output[2]~reg0  ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.019 ns                ;
+; N/A                                     ; 190.26 MHz ( period = 5.256 ns )                    ; output[3]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.017 ns                ;
+; N/A                                     ; 190.51 MHz ( period = 5.249 ns )                    ; output[10]~reg0 ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.008 ns                ;
+; N/A                                     ; 190.55 MHz ( period = 5.248 ns )                    ; output[2]~reg0  ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 5.009 ns                ;
+; N/A                                     ; 190.95 MHz ( period = 5.237 ns )                    ; output[2]~reg0  ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.998 ns                ;
+; N/A                                     ; 191.53 MHz ( period = 5.221 ns )                    ; output[0]~reg0  ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.984 ns                ;
+; N/A                                     ; 192.86 MHz ( period = 5.185 ns )                    ; output[1]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.946 ns                ;
+; N/A                                     ; 192.86 MHz ( period = 5.185 ns )                    ; output[7]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.946 ns                ;
+; N/A                                     ; 193.12 MHz ( period = 5.178 ns )                    ; output[4]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.939 ns                ;
+; N/A                                     ; 193.84 MHz ( period = 5.159 ns )                    ; output[7]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.920 ns                ;
+; N/A                                     ; 193.95 MHz ( period = 5.156 ns )                    ; output[8]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.917 ns                ;
+; N/A                                     ; 193.99 MHz ( period = 5.155 ns )                    ; output[8]~reg0  ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.916 ns                ;
+; N/A                                     ; 194.21 MHz ( period = 5.149 ns )                    ; output[5]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.910 ns                ;
+; N/A                                     ; 194.36 MHz ( period = 5.145 ns )                    ; output[8]~reg0  ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.906 ns                ;
+; N/A                                     ; 194.78 MHz ( period = 5.134 ns )                    ; output[8]~reg0  ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.895 ns                ;
+; N/A                                     ; 195.66 MHz ( period = 5.111 ns )                    ; output[11]~reg0 ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.870 ns                ;
+; N/A                                     ; 195.77 MHz ( period = 5.108 ns )                    ; output[2]~reg0  ; output[21]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.871 ns                ;
+; N/A                                     ; 195.81 MHz ( period = 5.107 ns )                    ; output[2]~reg0  ; output[23]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.870 ns                ;
+; N/A                                     ; 195.85 MHz ( period = 5.106 ns )                    ; output[2]~reg0  ; output[25]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.869 ns                ;
+; N/A                                     ; 195.89 MHz ( period = 5.105 ns )                    ; output[2]~reg0  ; output[22]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.868 ns                ;
+; N/A                                     ; 195.96 MHz ( period = 5.103 ns )                    ; output[2]~reg0  ; output[20]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.866 ns                ;
+; N/A                                     ; 196.04 MHz ( period = 5.101 ns )                    ; output[2]~reg0  ; output[17]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.864 ns                ;
+; N/A                                     ; 196.23 MHz ( period = 5.096 ns )                    ; output[2]~reg0  ; output[24]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.859 ns                ;
+; N/A                                     ; 196.27 MHz ( period = 5.095 ns )                    ; output[2]~reg0  ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.858 ns                ;
+; N/A                                     ; 196.66 MHz ( period = 5.085 ns )                    ; output[11]~reg0 ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.844 ns                ;
+; N/A                                     ; 197.43 MHz ( period = 5.065 ns )                    ; output[0]~reg0  ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.826 ns                ;
+; N/A                                     ; 197.71 MHz ( period = 5.058 ns )                    ; output[2]~reg0  ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.821 ns                ;
+; N/A                                     ; 197.82 MHz ( period = 5.055 ns )                    ; output[0]~reg0  ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.816 ns                ;
+; N/A                                     ; 198.26 MHz ( period = 5.044 ns )                    ; output[0]~reg0  ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.805 ns                ;
+; N/A                                     ; 199.12 MHz ( period = 5.022 ns )                    ; output[12]~reg0 ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.783 ns                ;
+; N/A                                     ; 199.16 MHz ( period = 5.021 ns )                    ; output[12]~reg0 ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.782 ns                ;
+; N/A                                     ; 199.48 MHz ( period = 5.013 ns )                    ; output[0]~reg0  ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.776 ns                ;
+; N/A                                     ; 199.56 MHz ( period = 5.011 ns )                    ; output[12]~reg0 ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.772 ns                ;
+; N/A                                     ; 199.80 MHz ( period = 5.005 ns )                    ; output[8]~reg0  ; output[21]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.768 ns                ;
+; N/A                                     ; 199.84 MHz ( period = 5.004 ns )                    ; output[8]~reg0  ; output[23]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.767 ns                ;
+; N/A                                     ; 199.88 MHz ( period = 5.003 ns )                    ; output[8]~reg0  ; output[25]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.766 ns                ;
+; N/A                                     ; 199.92 MHz ( period = 5.002 ns )                    ; output[8]~reg0  ; output[22]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.765 ns                ;
+; N/A                                     ; 200.00 MHz ( period = 5.000 ns )                    ; output[12]~reg0 ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.761 ns                ;
+; N/A                                     ; 200.00 MHz ( period = 5.000 ns )                    ; output[8]~reg0  ; output[20]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.763 ns                ;
+; N/A                                     ; 200.08 MHz ( period = 4.998 ns )                    ; output[8]~reg0  ; output[17]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.761 ns                ;
+; N/A                                     ; 200.28 MHz ( period = 4.993 ns )                    ; output[8]~reg0  ; output[24]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.756 ns                ;
+; N/A                                     ; 200.32 MHz ( period = 4.992 ns )                    ; output[8]~reg0  ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.755 ns                ;
+; N/A                                     ; 200.32 MHz ( period = 4.992 ns )                    ; output[7]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.753 ns                ;
+; N/A                                     ; 200.44 MHz ( period = 4.989 ns )                    ; output[6]~reg0  ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.752 ns                ;
+; N/A                                     ; 201.49 MHz ( period = 4.963 ns )                    ; output[2]~reg0  ; output[7]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.724 ns                ;
+; N/A                                     ; 201.53 MHz ( period = 4.962 ns )                    ; output[2]~reg0  ; output[0]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.723 ns                ;
+; N/A                                     ; 201.57 MHz ( period = 4.961 ns )                    ; output[3]~reg0  ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.724 ns                ;
+; N/A                                     ; 201.61 MHz ( period = 4.960 ns )                    ; output[2]~reg0  ; output[3]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.721 ns                ;
+; N/A                                     ; 201.61 MHz ( period = 4.960 ns )                    ; output[2]~reg0  ; output[2]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.721 ns                ;
+; N/A                                     ; 201.69 MHz ( period = 4.958 ns )                    ; output[2]~reg0  ; output[8]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.719 ns                ;
+; N/A                                     ; 201.82 MHz ( period = 4.955 ns )                    ; output[2]~reg0  ; output[13]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.716 ns                ;
+; N/A                                     ; 201.82 MHz ( period = 4.955 ns )                    ; output[2]~reg0  ; output[4]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.716 ns                ;
+; N/A                                     ; 201.86 MHz ( period = 4.954 ns )                    ; output[10]~reg0 ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.715 ns                ;
+; N/A                                     ; 201.94 MHz ( period = 4.952 ns )                    ; output[2]~reg0  ; output[5]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.713 ns                ;
+; N/A                                     ; 202.22 MHz ( period = 4.945 ns )                    ; output[0]~reg0  ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.708 ns                ;
+; N/A                                     ; 202.39 MHz ( period = 4.941 ns )                    ; output[2]~reg0  ; output[6]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.702 ns                ;
+; N/A                                     ; 203.33 MHz ( period = 4.918 ns )                    ; output[11]~reg0 ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.677 ns                ;
+; N/A                                     ; 203.42 MHz ( period = 4.916 ns )                    ; output[9]~reg0  ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.677 ns                ;
+; N/A                                     ; 203.46 MHz ( period = 4.915 ns )                    ; output[0]~reg0  ; output[21]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.678 ns                ;
+; N/A                                     ; 203.50 MHz ( period = 4.914 ns )                    ; output[0]~reg0  ; output[23]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.677 ns                ;
+; N/A                                     ; 203.54 MHz ( period = 4.913 ns )                    ; output[0]~reg0  ; output[25]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.676 ns                ;
+; N/A                                     ; 203.58 MHz ( period = 4.912 ns )                    ; output[0]~reg0  ; output[22]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.675 ns                ;
+; N/A                                     ; 203.67 MHz ( period = 4.910 ns )                    ; output[0]~reg0  ; output[20]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.673 ns                ;
+; N/A                                     ; 203.75 MHz ( period = 4.908 ns )                    ; output[8]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.669 ns                ;
+; N/A                                     ; 203.75 MHz ( period = 4.908 ns )                    ; output[0]~reg0  ; output[17]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.671 ns                ;
+; N/A                                     ; 203.96 MHz ( period = 4.903 ns )                    ; output[0]~reg0  ; output[24]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.666 ns                ;
+; N/A                                     ; 204.50 MHz ( period = 4.890 ns )                    ; output[9]~reg0  ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.651 ns                ;
+; N/A                                     ; 204.50 MHz ( period = 4.890 ns )                    ; output[1]~reg0  ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.653 ns                ;
+; N/A                                     ; 204.79 MHz ( period = 4.883 ns )                    ; output[4]~reg0  ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.646 ns                ;
+; N/A                                     ; 205.30 MHz ( period = 4.871 ns )                    ; output[12]~reg0 ; output[21]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.634 ns                ;
+; N/A                                     ; 205.34 MHz ( period = 4.870 ns )                    ; output[12]~reg0 ; output[23]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.633 ns                ;
+; N/A                                     ; 205.38 MHz ( period = 4.869 ns )                    ; output[12]~reg0 ; output[25]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.632 ns                ;
+; N/A                                     ; 205.42 MHz ( period = 4.868 ns )                    ; output[12]~reg0 ; output[22]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.631 ns                ;
+; N/A                                     ; 205.51 MHz ( period = 4.866 ns )                    ; output[12]~reg0 ; output[20]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.629 ns                ;
+; N/A                                     ; 205.59 MHz ( period = 4.864 ns )                    ; output[12]~reg0 ; output[17]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.627 ns                ;
+; N/A                                     ; 205.76 MHz ( period = 4.860 ns )                    ; output[8]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.621 ns                ;
+; N/A                                     ; 205.76 MHz ( period = 4.860 ns )                    ; output[8]~reg0  ; output[7]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.621 ns                ;
+; N/A                                     ; 205.80 MHz ( period = 4.859 ns )                    ; output[8]~reg0  ; output[0]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.620 ns                ;
+; N/A                                     ; 205.80 MHz ( period = 4.859 ns )                    ; output[12]~reg0 ; output[24]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.622 ns                ;
+; N/A                                     ; 205.85 MHz ( period = 4.858 ns )                    ; output[12]~reg0 ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.621 ns                ;
+; N/A                                     ; 205.89 MHz ( period = 4.857 ns )                    ; output[8]~reg0  ; output[3]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.618 ns                ;
+; N/A                                     ; 205.89 MHz ( period = 4.857 ns )                    ; output[8]~reg0  ; output[2]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.618 ns                ;
+; N/A                                     ; 205.97 MHz ( period = 4.855 ns )                    ; output[8]~reg0  ; output[8]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.616 ns                ;
+; N/A                                     ; 206.02 MHz ( period = 4.854 ns )                    ; output[5]~reg0  ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.617 ns                ;
+; N/A                                     ; 206.10 MHz ( period = 4.852 ns )                    ; output[8]~reg0  ; output[13]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.613 ns                ;
+; N/A                                     ; 206.10 MHz ( period = 4.852 ns )                    ; output[8]~reg0  ; output[4]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.613 ns                ;
+; N/A                                     ; 206.19 MHz ( period = 4.850 ns )                    ; output[2]~reg0  ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.613 ns                ;
+; N/A                                     ; 206.23 MHz ( period = 4.849 ns )                    ; output[8]~reg0  ; output[5]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.610 ns                ;
+; N/A                                     ; 206.40 MHz ( period = 4.845 ns )                    ; output[15]~reg0 ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.604 ns                ;
+; N/A                                     ; 206.70 MHz ( period = 4.838 ns )                    ; output[8]~reg0  ; output[6]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.599 ns                ;
+; N/A                                     ; 206.70 MHz ( period = 4.838 ns )                    ; output[3]~reg0  ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.599 ns                ;
+; N/A                                     ; 206.95 MHz ( period = 4.832 ns )                    ; output[14]~reg0 ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.591 ns                ;
+; N/A                                     ; 207.13 MHz ( period = 4.828 ns )                    ; output[3]~reg0  ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.589 ns                ;
+; N/A                                     ; 207.51 MHz ( period = 4.819 ns )                    ; output[15]~reg0 ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.578 ns                ;
+; N/A                                     ; 207.60 MHz ( period = 4.817 ns )                    ; output[3]~reg0  ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.578 ns                ;
+; N/A                                     ; 208.07 MHz ( period = 4.806 ns )                    ; output[14]~reg0 ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.565 ns                ;
+; N/A                                     ; 209.16 MHz ( period = 4.781 ns )                    ; output[6]~reg0  ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.544 ns                ;
+; N/A                                     ; 209.64 MHz ( period = 4.770 ns )                    ; output[0]~reg0  ; output[7]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.531 ns                ;
+; N/A                                     ; 209.69 MHz ( period = 4.769 ns )                    ; output[0]~reg0  ; output[0]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.530 ns                ;
+; N/A                                     ; 209.78 MHz ( period = 4.767 ns )                    ; output[0]~reg0  ; output[3]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.528 ns                ;
+; N/A                                     ; 209.78 MHz ( period = 4.767 ns )                    ; output[0]~reg0  ; output[2]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.528 ns                ;
+; N/A                                     ; 209.86 MHz ( period = 4.765 ns )                    ; output[0]~reg0  ; output[8]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.526 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; output[0]~reg0  ; output[13]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 210.00 MHz ( period = 4.762 ns )                    ; output[0]~reg0  ; output[4]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.523 ns                ;
+; N/A                                     ; 210.13 MHz ( period = 4.759 ns )                    ; output[0]~reg0  ; output[5]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.520 ns                ;
+; N/A                                     ; 210.39 MHz ( period = 4.753 ns )                    ; output[3]~reg0  ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.516 ns                ;
+; N/A                                     ; 210.61 MHz ( period = 4.748 ns )                    ; output[0]~reg0  ; output[6]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.509 ns                ;
+; N/A                                     ; 210.70 MHz ( period = 4.746 ns )                    ; output[10]~reg0 ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.507 ns                ;
+; N/A                                     ; 211.60 MHz ( period = 4.726 ns )                    ; output[12]~reg0 ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.487 ns                ;
+; N/A                                     ; 211.60 MHz ( period = 4.726 ns )                    ; output[12]~reg0 ; output[7]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.487 ns                ;
+; N/A                                     ; 211.64 MHz ( period = 4.725 ns )                    ; output[12]~reg0 ; output[0]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.486 ns                ;
+; N/A                                     ; 211.73 MHz ( period = 4.723 ns )                    ; output[9]~reg0  ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.484 ns                ;
+; N/A                                     ; 211.73 MHz ( period = 4.723 ns )                    ; output[12]~reg0 ; output[3]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.484 ns                ;
+; N/A                                     ; 211.73 MHz ( period = 4.723 ns )                    ; output[12]~reg0 ; output[2]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.484 ns                ;
+; N/A                                     ; 211.82 MHz ( period = 4.721 ns )                    ; output[12]~reg0 ; output[8]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.482 ns                ;
+; N/A                                     ; 211.95 MHz ( period = 4.718 ns )                    ; output[12]~reg0 ; output[13]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.479 ns                ;
+; N/A                                     ; 211.95 MHz ( period = 4.718 ns )                    ; output[12]~reg0 ; output[4]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.479 ns                ;
+; N/A                                     ; 212.09 MHz ( period = 4.715 ns )                    ; output[12]~reg0 ; output[5]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.476 ns                ;
+; N/A                                     ; 212.18 MHz ( period = 4.713 ns )                    ; output[6]~reg0  ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.476 ns                ;
+; N/A                                     ; 212.31 MHz ( period = 4.710 ns )                    ; output[12]~reg0 ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.471 ns                ;
+; N/A                                     ; 212.49 MHz ( period = 4.706 ns )                    ; output[8]~reg0  ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.469 ns                ;
+; N/A                                     ; 212.59 MHz ( period = 4.704 ns )                    ; output[12]~reg0 ; output[6]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.465 ns                ;
+; N/A                                     ; 212.90 MHz ( period = 4.697 ns )                    ; output[7]~reg0  ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.460 ns                ;
+; N/A                                     ; 213.31 MHz ( period = 4.688 ns )                    ; output[3]~reg0  ; output[21]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.451 ns                ;
+; N/A                                     ; 213.31 MHz ( period = 4.688 ns )                    ; output[1]~reg0  ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.449 ns                ;
+; N/A                                     ; 213.36 MHz ( period = 4.687 ns )                    ; output[3]~reg0  ; output[23]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.450 ns                ;
+; N/A                                     ; 213.40 MHz ( period = 4.686 ns )                    ; output[3]~reg0  ; output[25]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.449 ns                ;
+; N/A                                     ; 213.45 MHz ( period = 4.685 ns )                    ; output[3]~reg0  ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.448 ns                ;
+; N/A                                     ; 213.45 MHz ( period = 4.685 ns )                    ; output[3]~reg0  ; output[22]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.448 ns                ;
+; N/A                                     ; 213.54 MHz ( period = 4.683 ns )                    ; output[3]~reg0  ; output[20]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.446 ns                ;
+; N/A                                     ; 213.58 MHz ( period = 4.682 ns )                    ; output[1]~reg0  ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.445 ns                ;
+; N/A                                     ; 213.63 MHz ( period = 4.681 ns )                    ; output[3]~reg0  ; output[17]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.444 ns                ;
+; N/A                                     ; 213.77 MHz ( period = 4.678 ns )                    ; output[10]~reg0 ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 213.77 MHz ( period = 4.678 ns )                    ; output[1]~reg0  ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 213.86 MHz ( period = 4.676 ns )                    ; output[3]~reg0  ; output[24]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.439 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; output[4]~reg0  ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.438 ns                ;
+; N/A                                     ; 214.13 MHz ( period = 4.670 ns )                    ; output[4]~reg0  ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.431 ns                ;
+; N/A                                     ; 214.27 MHz ( period = 4.667 ns )                    ; output[1]~reg0  ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.428 ns                ;
+; N/A                                     ; 214.59 MHz ( period = 4.660 ns )                    ; output[4]~reg0  ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.421 ns                ;
+; N/A                                     ; 214.96 MHz ( period = 4.652 ns )                    ; output[15]~reg0 ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.411 ns                ;
+; N/A                                     ; 215.10 MHz ( period = 4.649 ns )                    ; output[4]~reg0  ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.410 ns                ;
+; N/A                                     ; 215.24 MHz ( period = 4.646 ns )                    ; output[5]~reg0  ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.409 ns                ;
+; N/A                                     ; 215.56 MHz ( period = 4.639 ns )                    ; output[14]~reg0 ; output[28]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.398 ns                ;
+; N/A                                     ; 216.31 MHz ( period = 4.623 ns )                    ; output[11]~reg0 ; output[31]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.384 ns                ;
+; N/A                                     ; 216.73 MHz ( period = 4.614 ns )                    ; output[1]~reg0  ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.377 ns                ;
+; N/A                                     ; 216.83 MHz ( period = 4.612 ns )                    ; output[13]~reg0 ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.373 ns                ;
+; N/A                                     ; 217.06 MHz ( period = 4.607 ns )                    ; output[4]~reg0  ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.370 ns                ;
+; N/A                                     ; 217.20 MHz ( period = 4.604 ns )                    ; output[9]~reg0  ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.365 ns                ;
+; N/A                                     ; 217.68 MHz ( period = 4.594 ns )                    ; output[9]~reg0  ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.355 ns                ;
+; N/A                                     ; 217.77 MHz ( period = 4.592 ns )                    ; output[13]~reg0 ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.353 ns                ;
+; N/A                                     ; 218.05 MHz ( period = 4.586 ns )                    ; output[13]~reg0 ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.347 ns                ;
+; N/A                                     ; 218.20 MHz ( period = 4.583 ns )                    ; output[9]~reg0  ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.344 ns                ;
+; N/A                                     ; 218.25 MHz ( period = 4.582 ns )                    ; output[13]~reg0 ; output[12]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.343 ns                ;
+; N/A                                     ; 218.34 MHz ( period = 4.580 ns )                    ; output[2]~reg0  ; output[14]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.343 ns                ;
+; N/A                                     ; 218.34 MHz ( period = 4.580 ns )                    ; output[2]~reg0  ; output[18]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.343 ns                ;
+; N/A                                     ; 218.44 MHz ( period = 4.578 ns )                    ; output[5]~reg0  ; output[27]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.341 ns                ;
+; N/A                                     ; 218.44 MHz ( period = 4.578 ns )                    ; output[2]~reg0  ; output[19]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.341 ns                ;
+; N/A                                     ; 218.63 MHz ( period = 4.574 ns )                    ; output[2]~reg0  ; output[11]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.337 ns                ;
+; N/A                                     ; 218.72 MHz ( period = 4.572 ns )                    ; output[12]~reg0 ; output[26]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.335 ns                ;
+; N/A                                     ; 218.77 MHz ( period = 4.571 ns )                    ; output[13]~reg0 ; output[9]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.332 ns                ;
+; N/A                                     ; 218.87 MHz ( period = 4.569 ns )                    ; output[16]~reg0 ; output[29]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.330 ns                ;
+; N/A                                     ; 219.93 MHz ( period = 4.547 ns )                    ; output[6]~reg0  ; output[25]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.310 ns                ;
+; N/A                                     ; 220.12 MHz ( period = 4.543 ns )                    ; output[16]~reg0 ; output[30]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.304 ns                ;
+; N/A                                     ; 220.12 MHz ( period = 4.543 ns )                    ; output[3]~reg0  ; output[7]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.304 ns                ;
+; N/A                                     ; 220.17 MHz ( period = 4.542 ns )                    ; output[3]~reg0  ; output[0]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.303 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; output[3]~reg0  ; output[3]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.301 ns                ;
+; N/A                                     ; 220.26 MHz ( period = 4.540 ns )                    ; output[3]~reg0  ; output[2]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.301 ns                ;
+; N/A                                     ; 220.36 MHz ( period = 4.538 ns )                    ; output[3]~reg0  ; output[8]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.36 MHz ( period = 4.538 ns )                    ; output[1]~reg0  ; output[21]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.301 ns                ;
+; N/A                                     ; 220.41 MHz ( period = 4.537 ns )                    ; output[1]~reg0  ; output[23]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.300 ns                ;
+; N/A                                     ; 220.46 MHz ( period = 4.536 ns )                    ; output[1]~reg0  ; output[25]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.299 ns                ;
+; N/A                                     ; 220.51 MHz ( period = 4.535 ns )                    ; output[1]~reg0  ; output[22]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.298 ns                ;
+; N/A                                     ; 220.51 MHz ( period = 4.535 ns )                    ; output[3]~reg0  ; output[13]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.296 ns                ;
+; N/A                                     ; 220.51 MHz ( period = 4.535 ns )                    ; output[3]~reg0  ; output[4]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.296 ns                ;
+; N/A                                     ; 220.60 MHz ( period = 4.533 ns )                    ; output[1]~reg0  ; output[20]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.296 ns                ;
+; N/A                                     ; 220.65 MHz ( period = 4.532 ns )                    ; output[3]~reg0  ; output[5]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.293 ns                ;
+; N/A                                     ; 220.70 MHz ( period = 4.531 ns )                    ; output[1]~reg0  ; output[17]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.294 ns                ;
+; N/A                                     ; 220.95 MHz ( period = 4.526 ns )                    ; output[1]~reg0  ; output[24]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.289 ns                ;
+; N/A                                     ; 221.19 MHz ( period = 4.521 ns )                    ; output[3]~reg0  ; output[6]~reg0  ; clockasli  ; clockasli ; None                        ; None                      ; 4.282 ns                ;
+; N/A                                     ; 221.19 MHz ( period = 4.521 ns )                    ; output[7]~reg0  ; output[16]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.282 ns                ;
+; N/A                                     ; 221.24 MHz ( period = 4.520 ns )                    ; output[4]~reg0  ; output[21]~reg0 ; clockasli  ; clockasli ; None                        ; None                      ; 4.283 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                 ;                 ;            ;           ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+-----------------+-----------------+------------+-----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------+
+; tco                                                                           ;
++-------+--------------+------------+-----------------+------------+------------+
+; Slack ; Required tco ; Actual tco ; From            ; To         ; From Clock ;
++-------+--------------+------------+-----------------+------------+------------+
+; N/A   ; None         ; 8.347 ns   ; output[16]~reg0 ; output[16] ; clockasli  ;
+; N/A   ; None         ; 8.326 ns   ; output[6]~reg0  ; output[6]  ; clockasli  ;
+; N/A   ; None         ; 8.244 ns   ; output[20]~reg0 ; output[20] ; clockasli  ;
+; N/A   ; None         ; 8.056 ns   ; output[10]~reg0 ; output[10] ; clockasli  ;
+; N/A   ; None         ; 7.848 ns   ; output[4]~reg0  ; output[4]  ; clockasli  ;
+; N/A   ; None         ; 7.821 ns   ; output[3]~reg0  ; output[3]  ; clockasli  ;
+; N/A   ; None         ; 7.762 ns   ; output[9]~reg0  ; output[9]  ; clockasli  ;
+; N/A   ; None         ; 7.737 ns   ; output[12]~reg0 ; output[12] ; clockasli  ;
+; N/A   ; None         ; 7.724 ns   ; output[28]~reg0 ; output[28] ; clockasli  ;
+; N/A   ; None         ; 7.556 ns   ; output[24]~reg0 ; output[24] ; clockasli  ;
+; N/A   ; None         ; 7.544 ns   ; output[2]~reg0  ; output[2]  ; clockasli  ;
+; N/A   ; None         ; 7.483 ns   ; output[18]~reg0 ; output[18] ; clockasli  ;
+; N/A   ; None         ; 7.422 ns   ; output[11]~reg0 ; output[11] ; clockasli  ;
+; N/A   ; None         ; 7.408 ns   ; output[7]~reg0  ; output[7]  ; clockasli  ;
+; N/A   ; None         ; 7.374 ns   ; output[14]~reg0 ; output[14] ; clockasli  ;
+; N/A   ; None         ; 7.371 ns   ; output[5]~reg0  ; output[5]  ; clockasli  ;
+; N/A   ; None         ; 7.243 ns   ; output[19]~reg0 ; output[19] ; clockasli  ;
+; N/A   ; None         ; 7.232 ns   ; output[15]~reg0 ; output[15] ; clockasli  ;
+; N/A   ; None         ; 7.212 ns   ; output[26]~reg0 ; output[26] ; clockasli  ;
+; N/A   ; None         ; 7.195 ns   ; output[22]~reg0 ; output[22] ; clockasli  ;
+; N/A   ; None         ; 7.195 ns   ; output[8]~reg0  ; output[8]  ; clockasli  ;
+; N/A   ; None         ; 7.181 ns   ; output[31]~reg0 ; output[31] ; clockasli  ;
+; N/A   ; None         ; 7.177 ns   ; output[23]~reg0 ; output[23] ; clockasli  ;
+; N/A   ; None         ; 7.171 ns   ; output[1]~reg0  ; output[1]  ; clockasli  ;
+; N/A   ; None         ; 7.162 ns   ; output[30]~reg0 ; output[30] ; clockasli  ;
+; N/A   ; None         ; 7.161 ns   ; output[25]~reg0 ; output[25] ; clockasli  ;
+; N/A   ; None         ; 7.152 ns   ; output[27]~reg0 ; output[27] ; clockasli  ;
+; N/A   ; None         ; 7.146 ns   ; output[21]~reg0 ; output[21] ; clockasli  ;
+; N/A   ; None         ; 7.142 ns   ; output[29]~reg0 ; output[29] ; clockasli  ;
+; N/A   ; None         ; 7.132 ns   ; output[0]~reg0  ; output[0]  ; clockasli  ;
+; N/A   ; None         ; 7.126 ns   ; output[17]~reg0 ; output[17] ; clockasli  ;
+; N/A   ; None         ; 6.776 ns   ; output[13]~reg0 ; output[13] ; clockasli  ;
++-------+--------------+------------+-----------------+------------+------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Nov 21 15:42:24 2023
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Kaunter -c Kaunter --timing_analysis_only
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clockasli" is an undefined clock
+Info: Clock "clockasli" has Internal fmax of 175.16 MHz between source register "output[0]~reg0" and destination register "output[29]~reg0" (period= 5.709 ns)
+    Info: + Longest register to register delay is 5.470 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X46_Y15_N25; Fanout = 4; REG Node = 'output[0]~reg0'
+        Info: 2: + IC(0.611 ns) + CELL(0.495 ns) = 1.106 ns; Loc. = LCCOMB_X47_Y15_N0; Fanout = 2; COMB Node = 'Add0~1'
+        Info: 3: + IC(0.000 ns) + CELL(0.080 ns) = 1.186 ns; Loc. = LCCOMB_X47_Y15_N2; Fanout = 2; COMB Node = 'Add0~3'
+        Info: 4: + IC(0.000 ns) + CELL(0.080 ns) = 1.266 ns; Loc. = LCCOMB_X47_Y15_N4; Fanout = 2; COMB Node = 'Add0~5'
+        Info: 5: + IC(0.000 ns) + CELL(0.080 ns) = 1.346 ns; Loc. = LCCOMB_X47_Y15_N6; Fanout = 2; COMB Node = 'Add0~7'
+        Info: 6: + IC(0.000 ns) + CELL(0.080 ns) = 1.426 ns; Loc. = LCCOMB_X47_Y15_N8; Fanout = 2; COMB Node = 'Add0~9'
+        Info: 7: + IC(0.000 ns) + CELL(0.080 ns) = 1.506 ns; Loc. = LCCOMB_X47_Y15_N10; Fanout = 2; COMB Node = 'Add0~11'
+        Info: 8: + IC(0.000 ns) + CELL(0.080 ns) = 1.586 ns; Loc. = LCCOMB_X47_Y15_N12; Fanout = 2; COMB Node = 'Add0~13'
+        Info: 9: + IC(0.000 ns) + CELL(0.174 ns) = 1.760 ns; Loc. = LCCOMB_X47_Y15_N14; Fanout = 2; COMB Node = 'Add0~15'
+        Info: 10: + IC(0.000 ns) + CELL(0.080 ns) = 1.840 ns; Loc. = LCCOMB_X47_Y15_N16; Fanout = 2; COMB Node = 'Add0~17'
+        Info: 11: + IC(0.000 ns) + CELL(0.080 ns) = 1.920 ns; Loc. = LCCOMB_X47_Y15_N18; Fanout = 2; COMB Node = 'Add0~19'
+        Info: 12: + IC(0.000 ns) + CELL(0.080 ns) = 2.000 ns; Loc. = LCCOMB_X47_Y15_N20; Fanout = 2; COMB Node = 'Add0~21'
+        Info: 13: + IC(0.000 ns) + CELL(0.080 ns) = 2.080 ns; Loc. = LCCOMB_X47_Y15_N22; Fanout = 2; COMB Node = 'Add0~23'
+        Info: 14: + IC(0.000 ns) + CELL(0.080 ns) = 2.160 ns; Loc. = LCCOMB_X47_Y15_N24; Fanout = 2; COMB Node = 'Add0~25'
+        Info: 15: + IC(0.000 ns) + CELL(0.080 ns) = 2.240 ns; Loc. = LCCOMB_X47_Y15_N26; Fanout = 2; COMB Node = 'Add0~27'
+        Info: 16: + IC(0.000 ns) + CELL(0.080 ns) = 2.320 ns; Loc. = LCCOMB_X47_Y15_N28; Fanout = 2; COMB Node = 'Add0~29'
+        Info: 17: + IC(0.000 ns) + CELL(0.161 ns) = 2.481 ns; Loc. = LCCOMB_X47_Y15_N30; Fanout = 2; COMB Node = 'Add0~31'
+        Info: 18: + IC(0.000 ns) + CELL(0.080 ns) = 2.561 ns; Loc. = LCCOMB_X47_Y14_N0; Fanout = 2; COMB Node = 'Add0~33'
+        Info: 19: + IC(0.000 ns) + CELL(0.080 ns) = 2.641 ns; Loc. = LCCOMB_X47_Y14_N2; Fanout = 2; COMB Node = 'Add0~35'
+        Info: 20: + IC(0.000 ns) + CELL(0.080 ns) = 2.721 ns; Loc. = LCCOMB_X47_Y14_N4; Fanout = 2; COMB Node = 'Add0~37'
+        Info: 21: + IC(0.000 ns) + CELL(0.080 ns) = 2.801 ns; Loc. = LCCOMB_X47_Y14_N6; Fanout = 2; COMB Node = 'Add0~39'
+        Info: 22: + IC(0.000 ns) + CELL(0.080 ns) = 2.881 ns; Loc. = LCCOMB_X47_Y14_N8; Fanout = 2; COMB Node = 'Add0~41'
+        Info: 23: + IC(0.000 ns) + CELL(0.080 ns) = 2.961 ns; Loc. = LCCOMB_X47_Y14_N10; Fanout = 2; COMB Node = 'Add0~43'
+        Info: 24: + IC(0.000 ns) + CELL(0.080 ns) = 3.041 ns; Loc. = LCCOMB_X47_Y14_N12; Fanout = 2; COMB Node = 'Add0~45'
+        Info: 25: + IC(0.000 ns) + CELL(0.174 ns) = 3.215 ns; Loc. = LCCOMB_X47_Y14_N14; Fanout = 2; COMB Node = 'Add0~47'
+        Info: 26: + IC(0.000 ns) + CELL(0.080 ns) = 3.295 ns; Loc. = LCCOMB_X47_Y14_N16; Fanout = 2; COMB Node = 'Add0~49'
+        Info: 27: + IC(0.000 ns) + CELL(0.080 ns) = 3.375 ns; Loc. = LCCOMB_X47_Y14_N18; Fanout = 2; COMB Node = 'Add0~51'
+        Info: 28: + IC(0.000 ns) + CELL(0.080 ns) = 3.455 ns; Loc. = LCCOMB_X47_Y14_N20; Fanout = 2; COMB Node = 'Add0~53'
+        Info: 29: + IC(0.000 ns) + CELL(0.080 ns) = 3.535 ns; Loc. = LCCOMB_X47_Y14_N22; Fanout = 2; COMB Node = 'Add0~55'
+        Info: 30: + IC(0.000 ns) + CELL(0.080 ns) = 3.615 ns; Loc. = LCCOMB_X47_Y14_N24; Fanout = 2; COMB Node = 'Add0~57'
+        Info: 31: + IC(0.000 ns) + CELL(0.458 ns) = 4.073 ns; Loc. = LCCOMB_X47_Y14_N26; Fanout = 1; COMB Node = 'Add0~58'
+        Info: 32: + IC(1.123 ns) + CELL(0.178 ns) = 5.374 ns; Loc. = LCCOMB_X46_Y15_N18; Fanout = 1; COMB Node = 'output~28'
+        Info: 33: + IC(0.000 ns) + CELL(0.096 ns) = 5.470 ns; Loc. = LCFF_X46_Y15_N19; Fanout = 4; REG Node = 'output[29]~reg0'
+        Info: Total cell delay = 3.736 ns ( 68.30 % )
+        Info: Total interconnect delay = 1.734 ns ( 31.70 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clockasli" to destination register is 2.868 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'clockasli'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 32; COMB Node = 'clockasli~clkctrl'
+            Info: 3: + IC(1.002 ns) + CELL(0.602 ns) = 2.868 ns; Loc. = LCFF_X46_Y15_N19; Fanout = 4; REG Node = 'output[29]~reg0'
+            Info: Total cell delay = 1.628 ns ( 56.76 % )
+            Info: Total interconnect delay = 1.240 ns ( 43.24 % )
+        Info: - Longest clock path from clock "clockasli" to source register is 2.868 ns
+            Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'clockasli'
+            Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 32; COMB Node = 'clockasli~clkctrl'
+            Info: 3: + IC(1.002 ns) + CELL(0.602 ns) = 2.868 ns; Loc. = LCFF_X46_Y15_N25; Fanout = 4; REG Node = 'output[0]~reg0'
+            Info: Total cell delay = 1.628 ns ( 56.76 % )
+            Info: Total interconnect delay = 1.240 ns ( 43.24 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Micro setup delay of destination is -0.038 ns
+Info: tco from clock "clockasli" to destination pin "output[16]" through register "output[16]~reg0" is 8.347 ns
+    Info: + Longest clock path from clock "clockasli" to source register is 2.868 ns
+        Info: 1: + IC(0.000 ns) + CELL(1.026 ns) = 1.026 ns; Loc. = PIN_M1; Fanout = 1; CLK Node = 'clockasli'
+        Info: 2: + IC(0.238 ns) + CELL(0.000 ns) = 1.264 ns; Loc. = CLKCTRL_G3; Fanout = 32; COMB Node = 'clockasli~clkctrl'
+        Info: 3: + IC(1.002 ns) + CELL(0.602 ns) = 2.868 ns; Loc. = LCFF_X46_Y15_N23; Fanout = 4; REG Node = 'output[16]~reg0'
+        Info: Total cell delay = 1.628 ns ( 56.76 % )
+        Info: Total interconnect delay = 1.240 ns ( 43.24 % )
+    Info: + Micro clock to output delay of source is 0.277 ns
+    Info: + Longest register to pin delay is 5.202 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X46_Y15_N23; Fanout = 4; REG Node = 'output[16]~reg0'
+        Info: 2: + IC(2.186 ns) + CELL(3.016 ns) = 5.202 ns; Loc. = PIN_AB19; Fanout = 0; PIN Node = 'output[16]'
+        Info: Total cell delay = 3.016 ns ( 57.98 % )
+        Info: Total interconnect delay = 2.186 ns ( 42.02 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 175 megabytes
+    Info: Processing ended: Tue Nov 21 15:42:24 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+

@@ -1,0 +1,335 @@
+Simulator report for ConvInp
+Tue Nov 21 16:02:14 2023
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Simulator Summary
+  3. Simulator Settings
+  4. Simulation Waveforms
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2010 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------+
+; Simulator Summary                          ;
++-----------------------------+--------------+
+; Type                        ; Value        ;
++-----------------------------+--------------+
+; Simulation Start Time       ; 0 ps         ;
+; Simulation End Time         ; 1.0 us       ;
+; Simulation Netlist Size     ; 83 nodes     ;
+; Simulation Coverage         ;       1.22 % ;
+; Total Number of Transitions ; 216          ;
+; Simulation Breakpoints      ; 0            ;
+; Family                      ; Cyclone II   ;
++-----------------------------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                       ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+; Option                                                                                     ; Setting     ; Default Value ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+; Simulation mode                                                                            ; Functional  ; Timing        ;
+; Start time                                                                                 ; 0 ns        ; 0 ns          ;
+; Simulation results format                                                                  ; CVWF        ;               ;
+; Vector input source                                                                        ; ConvInp.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On          ; On            ;
+; Check outputs                                                                              ; Off         ; Off           ;
+; Report simulation coverage                                                                 ; On          ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On          ; On            ;
+; Display missing 1-value coverage report                                                    ; On          ; On            ;
+; Display missing 0-value coverage report                                                    ; On          ; On            ;
+; Detect setup and hold time violations                                                      ; Off         ; Off           ;
+; Detect glitches                                                                            ; Off         ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off         ; Off           ;
+; Generate Signal Activity File                                                              ; Off         ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off         ; Off           ;
+; Group bus channels in simulation results                                                   ; Off         ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On          ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE  ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off         ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; On          ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto        ; Auto          ;
++--------------------------------------------------------------------------------------------+-------------+---------------+
+
+
++----------------------+
+; Simulation Waveforms ;
++----------------------+
+Waveform report data cannot be output to ASCII.
+Please use Quartus II to view the waveform report data.
+
+
++--------------------------------------------------------------------+
+; Coverage Summary                                                   ;
++-----------------------------------------------------+--------------+
+; Type                                                ; Value        ;
++-----------------------------------------------------+--------------+
+; Total coverage as a percentage                      ;       1.22 % ;
+; Total nodes checked                                 ; 83           ;
+; Total output ports checked                          ; 82           ;
+; Total output ports with complete 1/0-value coverage ; 1            ;
+; Total output ports with no 1/0-value coverage       ; 81           ;
+; Total output ports with no 1-value coverage         ; 81           ;
+; Total output ports with no 0-value coverage         ; 81           ;
++-----------------------------------------------------+--------------+
+
+
+The following table displays output ports that toggle between 1 and 0 during simulation.
++----------------------------------------------------+
+; Complete 1/0-Value Coverage                        ;
++--------------+------------------+------------------+
+; Node Name    ; Output Port Name ; Output Port Type ;
++--------------+------------------+------------------+
+; |convinp|clk ; |convinp|clk     ; out              ;
++--------------+------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 1 during simulation.
++----------------------------------------------------------------------+
+; Missing 1-Value Coverage                                             ;
++-------------------------+-------------------------+------------------+
+; Node Name               ; Output Port Name        ; Output Port Type ;
++-------------------------+-------------------------+------------------+
+; |convinp|binout[7]~reg0 ; |convinp|binout[7]~reg0 ; regout           ;
+; |convinp|binout[6]~reg0 ; |convinp|binout[6]~reg0 ; regout           ;
+; |convinp|binout[5]~reg0 ; |convinp|binout[5]~reg0 ; regout           ;
+; |convinp|binout[4]~reg0 ; |convinp|binout[4]~reg0 ; regout           ;
+; |convinp|binout[3]~reg0 ; |convinp|binout[3]~reg0 ; regout           ;
+; |convinp|binout[2]~reg0 ; |convinp|binout[2]~reg0 ; regout           ;
+; |convinp|binout[1]~reg0 ; |convinp|binout[1]~reg0 ; regout           ;
+; |convinp|binout[0]~reg0 ; |convinp|binout[0]~reg0 ; regout           ;
+; |convinp|serinput[0]    ; |convinp|serinput[0]    ; out              ;
+; |convinp|serinput[1]    ; |convinp|serinput[1]    ; out              ;
+; |convinp|serinput[2]    ; |convinp|serinput[2]    ; out              ;
+; |convinp|serinput[3]    ; |convinp|serinput[3]    ; out              ;
+; |convinp|serinput[4]    ; |convinp|serinput[4]    ; out              ;
+; |convinp|serinput[5]    ; |convinp|serinput[5]    ; out              ;
+; |convinp|serinput[6]    ; |convinp|serinput[6]    ; out              ;
+; |convinp|serinput[7]    ; |convinp|serinput[7]    ; out              ;
+; |convinp|counting[0]    ; |convinp|counting[0]    ; pin_out          ;
+; |convinp|counting[1]    ; |convinp|counting[1]    ; pin_out          ;
+; |convinp|counting[2]    ; |convinp|counting[2]    ; pin_out          ;
+; |convinp|counting[3]    ; |convinp|counting[3]    ; pin_out          ;
+; |convinp|counting[4]    ; |convinp|counting[4]    ; pin_out          ;
+; |convinp|counting[5]    ; |convinp|counting[5]    ; pin_out          ;
+; |convinp|counting[6]    ; |convinp|counting[6]    ; pin_out          ;
+; |convinp|counting[7]    ; |convinp|counting[7]    ; pin_out          ;
+; |convinp|counting[8]    ; |convinp|counting[8]    ; pin_out          ;
+; |convinp|counting[9]    ; |convinp|counting[9]    ; pin_out          ;
+; |convinp|counting[10]   ; |convinp|counting[10]   ; pin_out          ;
+; |convinp|counting[11]   ; |convinp|counting[11]   ; pin_out          ;
+; |convinp|counting[12]   ; |convinp|counting[12]   ; pin_out          ;
+; |convinp|counting[13]   ; |convinp|counting[13]   ; pin_out          ;
+; |convinp|counting[14]   ; |convinp|counting[14]   ; pin_out          ;
+; |convinp|counting[15]   ; |convinp|counting[15]   ; pin_out          ;
+; |convinp|counting[16]   ; |convinp|counting[16]   ; pin_out          ;
+; |convinp|counting[17]   ; |convinp|counting[17]   ; pin_out          ;
+; |convinp|counting[18]   ; |convinp|counting[18]   ; pin_out          ;
+; |convinp|counting[19]   ; |convinp|counting[19]   ; pin_out          ;
+; |convinp|counting[20]   ; |convinp|counting[20]   ; pin_out          ;
+; |convinp|counting[21]   ; |convinp|counting[21]   ; pin_out          ;
+; |convinp|counting[22]   ; |convinp|counting[22]   ; pin_out          ;
+; |convinp|counting[23]   ; |convinp|counting[23]   ; pin_out          ;
+; |convinp|counting[24]   ; |convinp|counting[24]   ; pin_out          ;
+; |convinp|counting[25]   ; |convinp|counting[25]   ; pin_out          ;
+; |convinp|counting[26]   ; |convinp|counting[26]   ; pin_out          ;
+; |convinp|counting[27]   ; |convinp|counting[27]   ; pin_out          ;
+; |convinp|counting[28]   ; |convinp|counting[28]   ; pin_out          ;
+; |convinp|counting[29]   ; |convinp|counting[29]   ; pin_out          ;
+; |convinp|counting[30]   ; |convinp|counting[30]   ; pin_out          ;
+; |convinp|counting[31]   ; |convinp|counting[31]   ; pin_out          ;
+; |convinp|binout[0]      ; |convinp|binout[0]      ; pin_out          ;
+; |convinp|binout[1]      ; |convinp|binout[1]      ; pin_out          ;
+; |convinp|binout[2]      ; |convinp|binout[2]      ; pin_out          ;
+; |convinp|binout[3]      ; |convinp|binout[3]      ; pin_out          ;
+; |convinp|binout[4]      ; |convinp|binout[4]      ; pin_out          ;
+; |convinp|binout[5]      ; |convinp|binout[5]      ; pin_out          ;
+; |convinp|binout[6]      ; |convinp|binout[6]      ; pin_out          ;
+; |convinp|binout[7]      ; |convinp|binout[7]      ; pin_out          ;
+; |convinp|binout[8]      ; |convinp|binout[8]      ; pin_out          ;
+; |convinp|binout[9]      ; |convinp|binout[9]      ; pin_out          ;
+; |convinp|binout[10]     ; |convinp|binout[10]     ; pin_out          ;
+; |convinp|binout[11]     ; |convinp|binout[11]     ; pin_out          ;
+; |convinp|binout[12]     ; |convinp|binout[12]     ; pin_out          ;
+; |convinp|binout[13]     ; |convinp|binout[13]     ; pin_out          ;
+; |convinp|binout[14]     ; |convinp|binout[14]     ; pin_out          ;
+; |convinp|binout[15]     ; |convinp|binout[15]     ; pin_out          ;
+; |convinp|binout[16]     ; |convinp|binout[16]     ; pin_out          ;
+; |convinp|binout[17]     ; |convinp|binout[17]     ; pin_out          ;
+; |convinp|binout[18]     ; |convinp|binout[18]     ; pin_out          ;
+; |convinp|binout[19]     ; |convinp|binout[19]     ; pin_out          ;
+; |convinp|binout[20]     ; |convinp|binout[20]     ; pin_out          ;
+; |convinp|binout[21]     ; |convinp|binout[21]     ; pin_out          ;
+; |convinp|binout[22]     ; |convinp|binout[22]     ; pin_out          ;
+; |convinp|binout[23]     ; |convinp|binout[23]     ; pin_out          ;
+; |convinp|binout[24]     ; |convinp|binout[24]     ; pin_out          ;
+; |convinp|binout[25]     ; |convinp|binout[25]     ; pin_out          ;
+; |convinp|binout[26]     ; |convinp|binout[26]     ; pin_out          ;
+; |convinp|binout[27]     ; |convinp|binout[27]     ; pin_out          ;
+; |convinp|binout[28]     ; |convinp|binout[28]     ; pin_out          ;
+; |convinp|binout[29]     ; |convinp|binout[29]     ; pin_out          ;
+; |convinp|binout[30]     ; |convinp|binout[30]     ; pin_out          ;
+; |convinp|binout[31]     ; |convinp|binout[31]     ; pin_out          ;
+; |convinp|Equal0~0       ; |convinp|Equal0~0       ; out0             ;
++-------------------------+-------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++----------------------------------------------------------------------+
+; Missing 0-Value Coverage                                             ;
++-------------------------+-------------------------+------------------+
+; Node Name               ; Output Port Name        ; Output Port Type ;
++-------------------------+-------------------------+------------------+
+; |convinp|binout[7]~reg0 ; |convinp|binout[7]~reg0 ; regout           ;
+; |convinp|binout[6]~reg0 ; |convinp|binout[6]~reg0 ; regout           ;
+; |convinp|binout[5]~reg0 ; |convinp|binout[5]~reg0 ; regout           ;
+; |convinp|binout[4]~reg0 ; |convinp|binout[4]~reg0 ; regout           ;
+; |convinp|binout[3]~reg0 ; |convinp|binout[3]~reg0 ; regout           ;
+; |convinp|binout[2]~reg0 ; |convinp|binout[2]~reg0 ; regout           ;
+; |convinp|binout[1]~reg0 ; |convinp|binout[1]~reg0 ; regout           ;
+; |convinp|binout[0]~reg0 ; |convinp|binout[0]~reg0 ; regout           ;
+; |convinp|serinput[0]    ; |convinp|serinput[0]    ; out              ;
+; |convinp|serinput[1]    ; |convinp|serinput[1]    ; out              ;
+; |convinp|serinput[2]    ; |convinp|serinput[2]    ; out              ;
+; |convinp|serinput[3]    ; |convinp|serinput[3]    ; out              ;
+; |convinp|serinput[4]    ; |convinp|serinput[4]    ; out              ;
+; |convinp|serinput[5]    ; |convinp|serinput[5]    ; out              ;
+; |convinp|serinput[6]    ; |convinp|serinput[6]    ; out              ;
+; |convinp|serinput[7]    ; |convinp|serinput[7]    ; out              ;
+; |convinp|counting[0]    ; |convinp|counting[0]    ; pin_out          ;
+; |convinp|counting[1]    ; |convinp|counting[1]    ; pin_out          ;
+; |convinp|counting[2]    ; |convinp|counting[2]    ; pin_out          ;
+; |convinp|counting[3]    ; |convinp|counting[3]    ; pin_out          ;
+; |convinp|counting[4]    ; |convinp|counting[4]    ; pin_out          ;
+; |convinp|counting[5]    ; |convinp|counting[5]    ; pin_out          ;
+; |convinp|counting[6]    ; |convinp|counting[6]    ; pin_out          ;
+; |convinp|counting[7]    ; |convinp|counting[7]    ; pin_out          ;
+; |convinp|counting[8]    ; |convinp|counting[8]    ; pin_out          ;
+; |convinp|counting[9]    ; |convinp|counting[9]    ; pin_out          ;
+; |convinp|counting[10]   ; |convinp|counting[10]   ; pin_out          ;
+; |convinp|counting[11]   ; |convinp|counting[11]   ; pin_out          ;
+; |convinp|counting[12]   ; |convinp|counting[12]   ; pin_out          ;
+; |convinp|counting[13]   ; |convinp|counting[13]   ; pin_out          ;
+; |convinp|counting[14]   ; |convinp|counting[14]   ; pin_out          ;
+; |convinp|counting[15]   ; |convinp|counting[15]   ; pin_out          ;
+; |convinp|counting[16]   ; |convinp|counting[16]   ; pin_out          ;
+; |convinp|counting[17]   ; |convinp|counting[17]   ; pin_out          ;
+; |convinp|counting[18]   ; |convinp|counting[18]   ; pin_out          ;
+; |convinp|counting[19]   ; |convinp|counting[19]   ; pin_out          ;
+; |convinp|counting[20]   ; |convinp|counting[20]   ; pin_out          ;
+; |convinp|counting[21]   ; |convinp|counting[21]   ; pin_out          ;
+; |convinp|counting[22]   ; |convinp|counting[22]   ; pin_out          ;
+; |convinp|counting[23]   ; |convinp|counting[23]   ; pin_out          ;
+; |convinp|counting[24]   ; |convinp|counting[24]   ; pin_out          ;
+; |convinp|counting[25]   ; |convinp|counting[25]   ; pin_out          ;
+; |convinp|counting[26]   ; |convinp|counting[26]   ; pin_out          ;
+; |convinp|counting[27]   ; |convinp|counting[27]   ; pin_out          ;
+; |convinp|counting[28]   ; |convinp|counting[28]   ; pin_out          ;
+; |convinp|counting[29]   ; |convinp|counting[29]   ; pin_out          ;
+; |convinp|counting[30]   ; |convinp|counting[30]   ; pin_out          ;
+; |convinp|counting[31]   ; |convinp|counting[31]   ; pin_out          ;
+; |convinp|binout[0]      ; |convinp|binout[0]      ; pin_out          ;
+; |convinp|binout[1]      ; |convinp|binout[1]      ; pin_out          ;
+; |convinp|binout[2]      ; |convinp|binout[2]      ; pin_out          ;
+; |convinp|binout[3]      ; |convinp|binout[3]      ; pin_out          ;
+; |convinp|binout[4]      ; |convinp|binout[4]      ; pin_out          ;
+; |convinp|binout[5]      ; |convinp|binout[5]      ; pin_out          ;
+; |convinp|binout[6]      ; |convinp|binout[6]      ; pin_out          ;
+; |convinp|binout[7]      ; |convinp|binout[7]      ; pin_out          ;
+; |convinp|binout[8]      ; |convinp|binout[8]      ; pin_out          ;
+; |convinp|binout[9]      ; |convinp|binout[9]      ; pin_out          ;
+; |convinp|binout[10]     ; |convinp|binout[10]     ; pin_out          ;
+; |convinp|binout[11]     ; |convinp|binout[11]     ; pin_out          ;
+; |convinp|binout[12]     ; |convinp|binout[12]     ; pin_out          ;
+; |convinp|binout[13]     ; |convinp|binout[13]     ; pin_out          ;
+; |convinp|binout[14]     ; |convinp|binout[14]     ; pin_out          ;
+; |convinp|binout[15]     ; |convinp|binout[15]     ; pin_out          ;
+; |convinp|binout[16]     ; |convinp|binout[16]     ; pin_out          ;
+; |convinp|binout[17]     ; |convinp|binout[17]     ; pin_out          ;
+; |convinp|binout[18]     ; |convinp|binout[18]     ; pin_out          ;
+; |convinp|binout[19]     ; |convinp|binout[19]     ; pin_out          ;
+; |convinp|binout[20]     ; |convinp|binout[20]     ; pin_out          ;
+; |convinp|binout[21]     ; |convinp|binout[21]     ; pin_out          ;
+; |convinp|binout[22]     ; |convinp|binout[22]     ; pin_out          ;
+; |convinp|binout[23]     ; |convinp|binout[23]     ; pin_out          ;
+; |convinp|binout[24]     ; |convinp|binout[24]     ; pin_out          ;
+; |convinp|binout[25]     ; |convinp|binout[25]     ; pin_out          ;
+; |convinp|binout[26]     ; |convinp|binout[26]     ; pin_out          ;
+; |convinp|binout[27]     ; |convinp|binout[27]     ; pin_out          ;
+; |convinp|binout[28]     ; |convinp|binout[28]     ; pin_out          ;
+; |convinp|binout[29]     ; |convinp|binout[29]     ; pin_out          ;
+; |convinp|binout[30]     ; |convinp|binout[30]     ; pin_out          ;
+; |convinp|binout[31]     ; |convinp|binout[31]     ; pin_out          ;
+; |convinp|Equal0~0       ; |convinp|Equal0~0       ; out0             ;
++-------------------------+-------------------------+------------------+
+
+
++---------------------+
+; Simulator INI Usage ;
++--------+------------+
+; Option ; Usage      ;
++--------+------------+
+
+
++--------------------+
+; Simulator Messages ;
++--------------------+
+Info: *******************************************************************
+Info: Running Quartus II Simulator
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Tue Nov 21 16:02:14 2023
+Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off ConvInp -c ConvInp
+Info: Using vector source file "C:/altera/91sp2/quartus/ConvInp/ConvInp.vwf"
+Info: Overwriting simulation input file with simulation results
+    Info: A backup of ConvInp.vwf called ConvInp.sim_ori.vwf has been created in the db folder
+Warning: Can't find signal in vector source file for input pin "|convinp|serinput[0]"
+Warning: Can't find signal in vector source file for input pin "|convinp|serinput[1]"
+Warning: Can't find signal in vector source file for input pin "|convinp|serinput[2]"
+Warning: Can't find signal in vector source file for input pin "|convinp|serinput[3]"
+Warning: Can't find signal in vector source file for input pin "|convinp|serinput[4]"
+Warning: Can't find signal in vector source file for input pin "|convinp|serinput[5]"
+Warning: Can't find signal in vector source file for input pin "|convinp|serinput[6]"
+Warning: Can't find signal in vector source file for input pin "|convinp|serinput[7]"
+Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
+    Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
+Info: Simulation partitioned into 1 sub-simulations
+Info: Simulation coverage is       1.22 %
+Info: Number of transitions in simulation is 216
+Info: Vector file ConvInp.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
+Info: Quartus II Simulator was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 145 megabytes
+    Info: Processing ended: Tue Nov 21 16:02:14 2023
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
+
+
