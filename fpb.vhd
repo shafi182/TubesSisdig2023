@@ -7,8 +7,7 @@ use work.all;
 entity FPB is 
 	port(rst,clk :in std_logic ;
 		a,b,c,d : in std_logic_vector (31 downto 0);
-		output : out std_logic_vector (31 downto 0)
-		);
+		output : out std_logic_vector (31 downto 0));
 end FPB;
 
 architecture fpb_arc of FPB is
@@ -101,7 +100,13 @@ begin
 	LodC : komparator_nol port map ( output_regC, load_c);
 	LodD : komparator_nol port map ( output_regD, load_d);
 
-output <= output_RegB;
-
+process(P)
+begin
+ if (P = '1') then
+	output <= output_regA;
+else
+	output<= (others=>'0');
+	end if;
+	end process;
 
 end fpb_arc;
