@@ -35,7 +35,7 @@ BEGIN
 	PROCESS
 	BEGIN
 				WAIT UNTIL(clk'EVENT ) AND ( clk = '1');
-				IF ( rst = '0' ) THEN
+				IF ( rst = '1' ) THEN
 					currentstate <= s0;
 				ELSE
 					currentstate <= nextstate;
@@ -91,6 +91,8 @@ BEGIN
 			
 		--State 1
 		WHEN s1 =>
+			Y <= '0';
+			P <= '0';
 			--Proses A dan B
 			IF (T = '0' AND U = '0') THEN
 				M1 <= '0';
@@ -115,8 +117,8 @@ BEGIN
 				Enable_c <= '0';
 				Enable_d <= '1';
 			ELSIF (W = '1') THEN
-				Enable_a <= '0';
-				Enable_b <= '0';
+				Enable_c <= '0';
+				Enable_d <= '0';
 			END IF;
 			
 			--PERPINDAHAN STATE
@@ -133,20 +135,32 @@ BEGIN
 			
 		--State 2	
 		WHEN s2 =>
+			Y <= '0';
+			P <= '0';
 			IF (T = '0' AND U = '0') THEN
 				M1 <= '0';
 				Enable_a <= '1';
 				Enable_b <= '0';
+				Enable_c <= '0';
+				Enable_d <= '0';
 			ELSIF (T = '1' AND U = '0') THEN
 				M1 <= '1';
 				Enable_a <= '0';
 				Enable_b <= '1';
-			ELSIF (U = '1') THEN
-				Enable_a <= '0';
-				Enable_b <= '0';
-				P <= '1';
+				Enable_c <= '0';
+				Enable_d <= '0';
 			END IF;
 			
+			IF (U = '1') THEN
+				Enable_a <= '0';
+				Enable_b <= '0';
+				Enable_c <= '0';
+				Enable_d <= '0';
+				P <= '1';
+				nextstate <= currentstate;
+			Else
+				nextstate <= currentstate;
+			END IF;
 	END CASE;
 	END PROCESS;
 END behavioral;
