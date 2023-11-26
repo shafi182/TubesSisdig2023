@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
 
-entity ConOut is generic(N: positive := 36);
+entity ConOut is generic(N: positive := 32);
 	port(
 			clk, reset: in std_logic;
 			binary_in: in std_logic_vector(N-1 downto 0);
